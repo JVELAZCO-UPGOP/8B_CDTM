@@ -7,10 +7,10 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/Veterinaria/CSS/estilos.css">
+    <link rel="stylesheet" href="/CSS/estilos.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/v4-shins.css">
-    <title>Hello, world!</title>
+    <title>Veterinaria!</title>
   </head>
   <body>
     <div class="container">
@@ -24,16 +24,16 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/Veterinaria/index.html">Mascotas <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/index.html">Mascotas <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Veterinaria/veterinarias.html">Veterinari@s</a>
+              <a class="nav-link" href="/veterinarias.html">Veterinari@s</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Veterinaria/duenos.html">Dueños</a>
+              <a class="nav-link" href="/duenos.html">Dueños</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/Veterinaria/consultas.html">Consultas</a>
+              <a class="nav-link" href="/consultas.html">Consultas</a>
             </li>
           </ul>
           <form class="form-inline">
@@ -44,23 +44,32 @@
       </nav>
       <!--Fin del Nav-->
       <div class="btn_modal">
-        <h1>Mascotas</h1>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-         Nueva mascota
-        </button>
+        <h1>Dueños</h1>
+        <div class="actions-menu-content">
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+          Nueva mascota
+          </button>
+        <div class="alert alert-danger alert-dismissible" role="alert">
+            <strong>Ops!</strong> Algo hicimos mal, por favor vuelve a intentarlo.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+      </div>
       </div>
       <!--Tabla-->
       <table class="table table-stripped table-hover">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Tipo</th>
+            <th scope="col">Identificacion</th>
+            <th scope="col">Pais</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Dueño</th>
+            <th scope="col">Apellido</th>
             <th scope="col"></th>
           </tr>
         </thead>
-        <tbody id="Lista-mascotas">
+        <tbody id="Lista-duenos">
          
         </tbody>
       </table>
@@ -72,7 +81,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Nueva Mascota</h5>
+        <h5 class="modal-title" id="exampleModalCenterTitle">Nuevo Dueño</h5>
         <button type="button" id="closeModal" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -82,28 +91,27 @@
           <input type="hidden" id="indice">
           <div class="form-row">
             <div class="col">
-              <select id="tipo" class="form-control">
-                <option>Tipo de animal</option>
-                <option>Perro</option>
-                <option>Gato</option>
-                <option>Ave</option>
-                <option>Otro</option>
-              </select> 
+                <input type="text" id="identificacion" name="identificacion" class="form-control" placeholder="Identificacion">
             </div>
+            <div class="col">
+                <select id="pais" class="form-control">
+                  <option>Pais</option>
+                  <option>Colombia</option>
+                  <option>Ecuador</option>
+                  <option>Peru</option>
+                  <option>Mexico</option>
+                  <option>Venezuela</option>
+                </select> 
+              </div>
           </div>
-          <div class="form-row">
+            <div class="form-row">
             <div class="col">
               <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre">
             </div>
             <div class="col">
-              <select id="dueno" class="form-control">
-                <option>Dueño</option>
-                <option>Esteban</option>
-                <option>Julian</option>
-                <option>Jonh</option>
-                <option>Felix</option>
-              </select> 
-            </div>
+                <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellido">
+              </div>
+           
           </div>
         </form>
       </div>
@@ -119,13 +127,13 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Eliminar Mascota</h5>
+        <h5 class="modal-title">Eliminar Dueño</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <p>¿Estas seguro de querer eliminar la mascota?</p>
+        <p>¿Estas seguro de querer eliminar al Dueño?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
@@ -157,6 +165,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.13.0/js/v4-shins.js"></script>
-    <script src="/Veterinaria//JS//mascotas.js"></script>
+    <script src="./JS/duenos.js"></script>
   </body>
 </html>
