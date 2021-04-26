@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            background-color: black;
+            width: 100px;
+            height: 50px;
+        }
+        .color-letra{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@16.13.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+    <script type="text/babel">
+        const app = document.getElementById('app');
+        
+        const Button = ()=><button className='color color-letra' onClick={()=>{alert('Que puto')}}>boton de react</button>
+        const Div = ()=><div><Button/></div>
+        ReactDOM.render(<Div/>, app);
+    </script>
+
+</body>
+</html>
